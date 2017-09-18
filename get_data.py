@@ -17,15 +17,15 @@
 
 import pandas as pd
 import argparse
-
+import arrow
 
 def main():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('-SD', '--start_date', type=str,
-                        default='2007-01-01', help='Start date parameter value - format YYYY-MM-DD')
+                        default='2000-01-01', help='Start date parameter value - format YYYY-MM-DD')
     parser.add_argument('-ED', '--end_date', type=str,
-                        default='2017-01-01', help='End date parameter - format YYYY-MM-DD')
+                        default=arrow.now().format('YYYY-MM-DD'), help='End date parameter - format YYYY-MM-DD')
     parser.add_argument('-T', '--ticker', nargs='+', help='<Required> Set flag', required=True)
     args = parser.parse_args()
     # # fetch all data
