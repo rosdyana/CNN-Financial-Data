@@ -42,7 +42,7 @@ def fetch_tiingo_data(ticker, start_date, end_date, fname):
             end_date=end_date,
             token=token
     ))
-    data.to_csv(fname, columns=["date", "adjOpen", "adjHigh", "adjLow", "adjClose", "adjVolume"], index=False)
+    data.to_csv(fname, columns=["date","open","close","high","low","volume","adjClose"], index=False)
 
 if __name__ == '__main__':
     main()
